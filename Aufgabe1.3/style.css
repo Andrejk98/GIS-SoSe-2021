@@ -18,8 +18,7 @@
   }
   
   /* Change background on mouse-over */
-  .navbar a:hover {
-    background: rgb(173, 18, 18);
+  .navbar a:hover {    
     color: black;
   }
   
