@@ -9,7 +9,7 @@
   
   /* Links inside the navbar */
   .navbar a {
-    float: inline-start;
+    float: inline-end;
     display: block;
     color: #f2f2f2;
     text-align: center;
