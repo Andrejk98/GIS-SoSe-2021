@@ -19,7 +19,7 @@
   
   /* Change background on mouse-over */
   .navbar a:hover {
-    background: #ddd;
+    background: rgb(173, 18, 18);
     color: black;
   }
   
