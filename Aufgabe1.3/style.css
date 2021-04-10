@@ -16,6 +16,10 @@
     text-decoration: none;
   }
   
+  .navbar-right{
+    float: right;
+  }
+  
   
   .navbar a:hover {    
     color: blue;
@@ -25,10 +29,6 @@
     color: red;
   }
 
-  .navbar-right{
-    float: right;
-  }
-  
   .main {
     margin: auto;  
     margin-top: 50px; 
