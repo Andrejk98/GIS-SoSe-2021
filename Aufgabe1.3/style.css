@@ -30,14 +30,6 @@
     
   }
 
-  .center {
-    margin: auto;
-    width: 800px;
-    border: 3px solid green;
-    padding: 10px;
-    margin-top: 50px;
-  } 
-
   .current{
     color: red;
   }
