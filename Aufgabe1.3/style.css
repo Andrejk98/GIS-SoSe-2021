@@ -25,6 +25,10 @@
     color: red;
   }
 
+  .navbar a:focus{
+    color: black;
+  }
+
   .navbar-right{
     float: right;
   }
