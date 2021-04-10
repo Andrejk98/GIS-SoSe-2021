@@ -1,13 +1,10 @@
 .navbar {
-    float: right;
     overflow: hidden;
     background-color: grey;
     position: fixed; 
     top: 0; 
     width: 15%; 
-    
 }
-  
   
   .navbar a {
     float: left;
@@ -17,9 +14,6 @@
     padding: 14px 14px;
     text-decoration: none;
   }
-  
-  
-  
   
   .navbar a:hover {    
     color: blue;
