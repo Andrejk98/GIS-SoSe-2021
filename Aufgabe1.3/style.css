@@ -24,6 +24,10 @@
   .navbar-right{
     float: right;
   }
+
+  .navbar-active{
+    color: red;
+}
   
   .main {
     margin: auto;  
