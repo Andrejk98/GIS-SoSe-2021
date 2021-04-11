@@ -7,13 +7,13 @@
 }
   
   .navbar a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 14px;
     text-decoration: none;
-    
+    float: right;
+    margin-right: 0;
   }
   
   .navbar a:hover {    
