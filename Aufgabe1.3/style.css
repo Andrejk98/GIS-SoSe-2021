@@ -21,13 +21,13 @@
     color: blue;
   }
 
-  .navbar-right{
-    float: right;
-  }
-
   .navbar a:active{
     color: red;
 }
+
+  .navbar-right{
+    float: right;
+  }
   
   .main {
     margin: auto;  
