@@ -54,4 +54,15 @@
       align-items: center;
   }
 
-  
+  label{
+      display: block;
+      cursor: pointer;
+  }
+  textarea{
+      width: 300px;
+      border: 1px solid white;
+      margin-bottom: 1em;
+  }
+  textarea{
+      height: 7em;
+  }
