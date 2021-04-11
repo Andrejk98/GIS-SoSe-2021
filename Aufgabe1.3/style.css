@@ -3,9 +3,7 @@
     background-color: grey;
     position: fixed; 
     top: 0; 
-    width: 15%; 
-    float: right;
-    margin-right: 0;
+    width: 15%;
 }
   
   .navbar a {
@@ -14,6 +12,8 @@
     text-align: center;
     padding: 14px 14px;
     text-decoration: none;
+    float: right;
+    margin-right: 0;
   }
   
   .navbar a:hover {    
