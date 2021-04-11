@@ -21,10 +21,6 @@
     color: blue;
   }
 
-  .navbar a:active{
-    color: red;
-  }
-
   .navbar-right{
     float: right;
   }
@@ -43,3 +39,7 @@
     padding: 10px;
     margin-top: 50px;
   } 
+
+  .active{
+      color: red;
+  }
