@@ -25,7 +25,7 @@
     float: right;
   }
 
-  .navbar-active{
+  .navbar a:active{
     color: red;
 }
   
