@@ -30,7 +30,8 @@
     float: right;
   }
   
-  .main { 
+  .main {
+      text-align: center;
     font: 1.1em/150% 'Segoe UI', Sans-Serif; 
     margin-top: 60px; 
     width: 800px;
