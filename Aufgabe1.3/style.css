@@ -6,7 +6,10 @@
     top: 0; 
     width: 310px;
 }
-  
+ 
+    .navbar a:active{
+        color: cyan;
+    }
   
   .navbar a {
     float: right;
@@ -20,10 +23,6 @@
   
   .navbar a:hover {    
     color: blue;
-  }
-
-  .active{
-      color: cyan;
   }
   
   .main {
