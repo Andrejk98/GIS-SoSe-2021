@@ -35,6 +35,7 @@
     width: 800px;
     background-image:
     url(Bilder/bg.png);
+    font: bold .9em/150% Georgia, Sans-Serif;
   }
 
   .navbar-active{
