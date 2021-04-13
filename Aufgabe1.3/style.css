@@ -1,25 +1,25 @@
-.navbar {
+  .navbar {
     overflow: hidden;
     background-color: grey;
     float: right;
     position: fixed; 
     top: 0; 
     width: 310px;
-}
- 
-    .navbar a:active{
-        color: cyan;
-    }
+  }
+
   
   .navbar a {
     float: right;
     display: block;
-    color: #f2f2f2;
+    
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+
+  .navbar a:active{
+        color: cyan;
+  }
   
   .navbar a:hover {    
     color: blue;
