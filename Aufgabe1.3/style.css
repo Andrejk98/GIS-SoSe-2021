@@ -35,8 +35,7 @@
     font: 1.1em/150% 'Segoe UI', Sans-Serif; 
     margin-top: 60px; 
     width: 800px;
-    background-image:
-    url(Bilder/bg.png);
+    background-image: url(Bilder/bg.png);
     }
 
   .navbar-active{
