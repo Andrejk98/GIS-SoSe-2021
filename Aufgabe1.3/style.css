@@ -33,7 +33,8 @@
     margin: auto;  
     margin-top: 50px; 
     width: 800px;
-    
+    background-image:
+    url(Bilder/bg.png);
   }
 
   .navbar-active{
@@ -58,3 +59,4 @@
   textarea{
       height: 7em;
   }
+  
