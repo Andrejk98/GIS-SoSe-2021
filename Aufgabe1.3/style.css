@@ -34,10 +34,6 @@
     background-image: url(Bilder/bg.png);
     }
 
-  .navbar-active{
-      color: red;
-  }
-
   .medien{
       display: flex;
       justify-content: center;
