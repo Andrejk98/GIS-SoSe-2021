@@ -22,12 +22,8 @@
     color: blue;
   }
 
-  .navbar a:active{
-    color: red;
-}
-
-  .navbar-right{
-    float: right;
+  .active{
+      color: cyan;
   }
   
   .main {
