@@ -31,8 +31,7 @@
   
   .main {
     margin: auto; 
-    font: 'Segoe UI', Sans-Serif; 
-    font-size: 50px;
+    font: 1em/150% 'Segoe UI', Sans-Serif; 
     margin-top: 60px; 
     width: 800px;
     background-image:
