@@ -1,8 +1,7 @@
   .navbar {
     overflow: hidden;
     background-color: grey;
-    position: fixed;
-    float: right; 
+    position: fixed; 
     top: 0; 
     width: 310px;
   }
