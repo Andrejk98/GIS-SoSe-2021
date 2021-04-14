@@ -54,6 +54,6 @@
       height: 50px;
   }
 
-  .active{
+  .active .navbar a{
       color: cyan;
   }
