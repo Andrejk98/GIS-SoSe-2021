@@ -1,12 +1,16 @@
   .navbar {
     overflow: hidden;
     background-color: grey;
-    float: right;
-    position: fixed; 
+    float: right; 
     top: 0; 
     width: 310px;
   }
 
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
   
   .navbar a {
     float: right;
