@@ -16,7 +16,7 @@
   }
 
   .navbar a:hover {    
-    color: blue;
+    color: cyan;
   }
   
   .main {
@@ -50,7 +50,7 @@
   }
 
   .active{
-      color: cyan;
+      color: red;
   }
 
   .navcolor{
