@@ -15,10 +15,6 @@
     text-decoration: none;
   }
 
-  /*.navbar a:active{
-    color: cyan;
-  }
-  */
   .navbar a:hover {    
     color: blue;
   }
