@@ -60,6 +60,7 @@
   .head {
     overflow: hidden;
     background-color: grey;
+    color: white;
     position: fixed; 
     top: 0; 
     width: 310px;
