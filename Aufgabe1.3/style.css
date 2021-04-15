@@ -56,17 +56,3 @@
   .navcolor{
       color: white;
   }
-
-  .head {
-    overflow: hidden;
-    background-color: grey;
-    color: white;
-    position: fixed; 
-    top: 0; 
-    width: 310px;
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
