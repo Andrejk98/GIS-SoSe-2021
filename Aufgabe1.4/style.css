@@ -88,7 +88,7 @@
   }
 
   header {
-    animation: textwelle 3s;
+    animation: textwelle 5s;
   }
   
   @keyframes textwelle {
