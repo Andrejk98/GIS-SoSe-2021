@@ -41,7 +41,7 @@
     position: fixed; 
     top: 0; 
     width: 310px;
-    margin-right: auto;
+    margin: unset;
   }
 
   
