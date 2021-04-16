@@ -70,3 +70,7 @@
   header p{
     color: blue;
   }
+
+  body h3{
+    color: crimson;
+  }
