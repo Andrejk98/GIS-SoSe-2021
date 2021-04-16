@@ -1,23 +1,4 @@
-  .navbar {
-    overflow: hidden;
-    background-color: grey;
-    position: fixed; 
-    top: 0; 
-    width: 310px;
-  }
-
-  
-  .navbar a {
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  .navbar a:hover {    
-    color: cyan;
-  }
+ 
   
   .main {
     margin: auto;
@@ -64,4 +45,23 @@
     margin-bottom: 10px;
   }
 
+  .navbar {
+    overflow: hidden;
+    background-color: grey;
+    position: fixed; 
+    top: 0; 
+    width: 310px;
+  }
+
   
+  .navbar a {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar a:hover {    
+    color: cyan;
+  }
