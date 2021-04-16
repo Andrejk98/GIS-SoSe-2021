@@ -20,7 +20,7 @@
   }
   
   .main {
-    text-align: center;
+    margin: auto;
     font: 1.1em/150% 'Segoe UI', Sans-Serif; 
     margin-top: 60px; 
     width: 800px;
@@ -42,7 +42,6 @@
       border: 1px solid black;
       margin-bottom: 1em;
       height: 7em;
-      margin: auto;
   }
  
   .icon{
@@ -59,17 +58,10 @@
   }
 
   header{
-    margin: auto;
     border: 2px solid black;
     text-align: center;
     padding: 14px 16px;
     margin-bottom: 10px;
   }
 
-h1{
-  margin: auto;
-}
-
-p, a, h2, table, div{
-  margin: auto;
-}
+  
