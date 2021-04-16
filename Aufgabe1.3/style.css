@@ -28,6 +28,10 @@
       height: 50px;
   }
 
+  .icon :hover{
+    color: red;
+  }
+
   header{
     border: 2px solid black;
     text-align: center;
