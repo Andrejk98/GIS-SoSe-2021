@@ -74,3 +74,7 @@
   body h3{
     color: crimson;
   }
+
+  body>h2{
+    color: darkcyan;
+  }
