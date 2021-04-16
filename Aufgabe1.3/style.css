@@ -66,3 +66,10 @@
     margin-bottom: 10px;
   }
 
+h1{
+  margin: auto;
+}
+
+p, a, h2, table, div{
+  margin: auto;
+}
