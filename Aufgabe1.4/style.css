@@ -28,20 +28,13 @@
       height: 50px;
   }
   
-  header{
-    border: 2px solid black;
-    text-align: center;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-  }
-
   .navbar {
     margin: 0;
     float: right;
     overflow: hidden;
     background-color: grey;
     position: fixed; 
-    top: 0; 
+    top: 60px; 
     width: 310px;
     margin-left:  470px;
   }
@@ -67,6 +60,17 @@
       color: white;
   }
 
+  header{
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 0;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    
+  }
+
+  
+
   header>p{
     color: blue;
   }
@@ -87,7 +91,7 @@
     color: deeppink;
   }
 
-  header {
+  img {
     animation: textwelle 5s;
   }
   
