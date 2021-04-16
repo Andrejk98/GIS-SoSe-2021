@@ -67,7 +67,7 @@
       color: white;
   }
 
-  header p{
+  header+p{
     color: blue;
   }
 
