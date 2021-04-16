@@ -29,7 +29,7 @@
   }
 
   .icon :hover{
-    color: red;
+    background-color: red;
   }
 
   header{
