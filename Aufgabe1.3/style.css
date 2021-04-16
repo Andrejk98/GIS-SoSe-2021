@@ -37,6 +37,7 @@
 
   .navbar {
     margin: unset;
+    float: right;
     overflow: hidden;
     background-color: grey;
     position: fixed; 
@@ -46,7 +47,6 @@
 
   
   .navbar a {
-    float: right;
     display: block;
     text-align: center;
     padding: 14px 16px;
