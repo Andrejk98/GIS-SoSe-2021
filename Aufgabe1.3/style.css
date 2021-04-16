@@ -28,14 +28,6 @@
       height: 50px;
   }
 
-  .active{
-      color: red;
-  }
-
-  .navcolor{
-      color: white;
-  }
-
   header{
     border: 2px solid black;
     text-align: center;
@@ -62,4 +54,12 @@
 
   .navbar a:hover {    
     color: cyan;
+  }
+
+  .active{
+      color: red;
+  }
+
+  .navcolor{
+      color: white;
   }
