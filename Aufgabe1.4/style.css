@@ -1,0 +1,67 @@
+  .navbar {
+    overflow: hidden;
+    background-color: grey;
+    position: fixed; 
+    top: 0; 
+    width: 310px;
+  }
+
+  
+  .navbar a {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar a:hover {    
+    color: cyan;
+  }
+  
+  .main {
+    margin: auto;
+    font: 1.1em/150% 'Segoe UI', Sans-Serif; 
+    margin-top: 60px; 
+    width: 800px;
+    background-image: url(Bilder/bg.png);
+    }
+
+  .medien{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  label{
+      display: block;
+      cursor: pointer;
+  }
+  textarea{
+      width: 300px;
+      border: 1px solid black;
+      margin-bottom: 1em;
+      height: 7em;
+  }
+ 
+  .icon{
+      width: 50px;
+      height: 50px;
+  }
+
+  .active{
+      color: red;
+  }
+
+  .navcolor{
+      color: white;
+  }
+
+  header{
+    border: 2px solid black;
+    text-align: center;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  
