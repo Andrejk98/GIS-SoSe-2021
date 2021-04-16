@@ -37,7 +37,6 @@
 
   .navbar {
     margin: unset;
-    float: right;
     overflow: hidden;
     background-color: grey;
     position: fixed; 
