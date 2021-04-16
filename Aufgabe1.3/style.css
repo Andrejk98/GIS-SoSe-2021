@@ -36,12 +36,12 @@
   }
 
   .navbar {
+    margin: unset;
     overflow: hidden;
     background-color: grey;
     position: fixed; 
     top: 0; 
     width: 310px;
-    margin: unset;
   }
 
   
