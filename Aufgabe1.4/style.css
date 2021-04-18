@@ -124,3 +124,17 @@
       font-size: 40px ;
     }
   }
+  @media print{
+    h1{
+      color: black;
+    }
+    h2{
+      color: grey;
+    }
+    h3{
+      color: indigo;
+    }
+    font{
+      font-size: 30px;
+    }
+  }
