@@ -91,6 +91,10 @@
     color: deeppink;
   }
 
+  table td{
+    color:greenyellow
+  }
+
   img {
     animation: textwelle 5s;
   }
@@ -124,17 +128,18 @@
       font-size: 40px ;
     }
   }
-  @media print{
+ 
+  @media screen and (min-width: 720px) {
     h1{
-      color: black;
+      color: deeppink;
     }
     h2{
-      color: grey;
+      color: deepskyblue;
     }
     h3{
-      color: indigo;
+      color: forestgreen;
     }
     font{
-      font-size: 30px;
+      font-size: 40px ;
     }
   }
