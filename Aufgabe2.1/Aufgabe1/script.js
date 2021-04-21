@@ -1,7 +1,6 @@
 "use strict";
 function a1() {
     let x = "Alles";
-    debugger;
     console.log(x);
     func1();
     console.log("Logo!");
