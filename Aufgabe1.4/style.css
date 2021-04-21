@@ -36,7 +36,7 @@
     position: fixed; 
     top: 60px; 
     width: 310px;
-    margin-left:  470px;
+    
   }
 
   
@@ -46,6 +46,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    margin-left:  470px;
   }
 
   .navbar a:hover {    
@@ -58,6 +59,17 @@
 
   .navcolor{
       color: white;
+  }
+
+  .navbar2{
+    margin: 0;
+    float: right;
+    overflow: hidden;
+    background-color: grey;
+    position: fixed; 
+    top: 60px; 
+    width: 310px;
+    margin-right:  470px;
   }
 
   header{
