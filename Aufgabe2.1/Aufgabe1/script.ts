@@ -1,24 +1,24 @@
 function a1(): void {
     let x: string = "Alles";
     console.log(x);
-    func1();
+    ausgabe1();
     console.log(x);
-    func2();
+    ausgabe2();
     console.log(x);
-    func3();
+    ausgabe3();
 }
 
 a1();
 
-function func1(): void {
-    console.log("Gute");
+function ausgabe1(): void {
+    console.log("Gute!");
 }
 
-function func2(): void {
+function ausgabe2(): void {
     console.log("Klar?");
 }
 
-function func3(): void {
+function ausgabe3(): void {
     console.log("Logo!");
 }
 //Ausgegeben in a wird Alles Klar? Logo!
