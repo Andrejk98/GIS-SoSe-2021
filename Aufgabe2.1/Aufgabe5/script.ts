@@ -1,4 +1,5 @@
 //A
+/*
 function multiply(): void {
     let x: number = 5;
     let y: number = 6;
@@ -6,6 +7,7 @@ function multiply(): void {
     z = x * y;
     console.log(z);
     }
+*/
 
 //B
 /*
