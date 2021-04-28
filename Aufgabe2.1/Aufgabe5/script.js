@@ -1,12 +1,14 @@
 "use strict";
 //A
-function multiply() {
-    let x = 5;
-    let y = 6;
-    let z;
+/*
+function multiply(): void {
+    let x: number = 5;
+    let y: number = 6;
+    let z: number;
     z = x * y;
     console.log(z);
-}
+    }
+*/
 //B
 /*
 function max(): void {
