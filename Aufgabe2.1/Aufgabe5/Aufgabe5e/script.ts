@@ -1,8 +1,13 @@
-function factorial(): number {
-    let n: number = 1;
-    while (n > 1) {
-        n = n * (n + 1);
-        console.log(n);
+function factorial(_n: number): number {
+    let fac: number = 1;
+    if (_n < 1) {
+        return 1;
+    } else {
+        for (let i: number = 1; i <= _n; i++) {
+            fac = fac * i;
+            console.log(fac);
+        }
     }
-    return n;
+    return fac; 
 }
+factorial(8);
