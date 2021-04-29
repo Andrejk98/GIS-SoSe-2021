@@ -1,5 +1,5 @@
 "use strict";
-function chess() {
+function chess8() {
     let chessboard = "";
     let rowStartsWithHashtag = false;
     let rows = 8;
@@ -16,5 +16,5 @@ function chess() {
     console.log(chessboard);
     return chessboard;
 }
-chess();
+chess8();
 //# sourceMappingURL=script.js.map
