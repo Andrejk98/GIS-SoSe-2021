@@ -1,4 +1,4 @@
-function chess(): String {
+function chess8(): String {
     let chessboard: string = "";
     let rowStartsWithHashtag: boolean = false;
     let rows: number = 8;
@@ -18,4 +18,4 @@ function chess(): String {
     console.log(chessboard);
     return chessboard;
 }
-chess();
+chess8();
