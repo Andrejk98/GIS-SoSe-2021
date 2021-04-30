@@ -1,9 +1,5 @@
 "use strict";
-function multiply() {
-    let x = 5;
-    let y = 6;
-    let z;
-    z = x * y;
-    console.log(z);
+function multiply(x, y) {
+    return x * y;
 }
 //# sourceMappingURL=script.js.map
