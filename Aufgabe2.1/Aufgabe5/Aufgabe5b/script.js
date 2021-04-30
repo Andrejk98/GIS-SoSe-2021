@@ -1,12 +1,10 @@
 "use strict";
-function max() {
-    let y = 5;
-    let u = 3;
-    if (y < u) {
-        console.log(u);
+function max(x, y) {
+    if (x < y) {
+        return y;
     }
     else {
-        console.log(y);
+        return x;
     }
 }
 //# sourceMappingURL=script.js.map

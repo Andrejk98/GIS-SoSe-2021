@@ -1,10 +1,8 @@
-function max(): void {
-    let y: number = 5;
-    let u: number = 3;
-    if (y < u) {
-        console.log(u);
+function max(x: number, y: number): number {
+    if (x < y) {
+       return y;
     }
     else {
-        console.log(y);
+        return x;
     }
 }
