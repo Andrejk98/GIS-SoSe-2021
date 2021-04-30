@@ -1,4 +1,7 @@
 "use strict";
-function isEven() {
+/*
+function isEven(): boolean {
+
 }
+*/ 
 //# sourceMappingURL=script.js.map
