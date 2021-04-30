@@ -5,9 +5,8 @@ function factorial(_n: number): number {
     } else {
         for (let i: number = 1; i <= _n; i++) {
             fac = fac * i;
-            console.log(fac);
         }
     }
     return fac; 
 }
-factorial(8);
+console.log(factorial(8));

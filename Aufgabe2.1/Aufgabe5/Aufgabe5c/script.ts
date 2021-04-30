@@ -4,7 +4,8 @@ function count(): void {
     while ( x < 100 ) {
         x++;
         a = x + a;
-        console.log(a);
+        
     }
+    console.log(a); 
 }
 count();

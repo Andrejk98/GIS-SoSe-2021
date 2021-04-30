@@ -1,11 +1,14 @@
 "use strict";
-/*function min(): number {
-    let a: number = 10;
-    let b: number = 20;
-    let c: number = 500;
-
-
-    return Number;
+function min(x, y, z) {
+    if (x < y && x < z) {
+        return x;
+    }
+    else if (y < x && y < z) {
+        return y;
+    }
+    else {
+        return z;
+    }
 }
-*/ 
+console.log(min(20, 15, 200));
 //# sourceMappingURL=script.js.map

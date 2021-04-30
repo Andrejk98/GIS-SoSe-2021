@@ -7,10 +7,9 @@ function factorial(_n) {
     else {
         for (let i = 1; i <= _n; i++) {
             fac = fac * i;
-            console.log(fac);
         }
     }
     return fac;
 }
-factorial(8);
+console.log(factorial(8));
 //# sourceMappingURL=script.js.map

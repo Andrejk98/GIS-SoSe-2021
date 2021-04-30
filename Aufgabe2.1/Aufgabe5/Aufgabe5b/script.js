@@ -7,4 +7,5 @@ function max(x, y) {
         return x;
     }
 }
+console.log(max(19, 5));
 //# sourceMappingURL=script.js.map

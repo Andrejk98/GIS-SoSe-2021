@@ -1,6 +1,7 @@
-function getRandomInt(_a: 0, _b: 10): void {
+function getRandomInt(): void {
     for (let i: number = 0; i < 10; i++) {
         let zufall: number = Math.random() * 10;
         console.log(zufall);  
     }
 }
+getRandomInt();

@@ -6,3 +6,4 @@ function max(x: number, y: number): number {
         return x;
     }
 }
+console.log(max(19, 5));
