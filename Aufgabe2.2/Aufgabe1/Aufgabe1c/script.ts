@@ -1,3 +1,8 @@
+function erschaffePerson(_name: string, _vorname: string, _alter: number, _matrikelnummer: number) {
+    let p: Student = {name: _name, vorname: _vorname, alter: _alter, matrikelnummer: _matrikelnummer};
+    return p;
+}
+
 class Student {
     name: String;
     vorname: String;
@@ -11,7 +16,7 @@ class Student {
         this.matrikelnummer = _matrikelnummer;
     }
 
-    zeigeInfos(): void {
+    zeigeInfos(_name: String, _vorname: String, _alter: number, _matrikelnummer: number): void {
         console.log(this.name, this.vorname, this.alter, this.matrikelnummer);
     }
 }
