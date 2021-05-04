@@ -17,11 +17,11 @@ context.fill();
 //Wolke
 context.beginPath();
 context.fillStyle = "White";
+context.arc(250, 50, 40, 0, 360, false);
 context.arc(300, 50, 40, 0, 360, false);
 context.arc(350, 50, 40, 0, 360, false);
-context.arc(400, 50, 40, 0, 360, false);
-context.arc(325, 80, 40, 0, 360, false);
-context.arc(375, 80, 40, 0, 360, false);
+context.arc(275, 80, 45, 0, 360, false);
+context.arc(325, 80, 45, 0, 360, false);
 context.fill();
 //Baum
 context.beginPath();
