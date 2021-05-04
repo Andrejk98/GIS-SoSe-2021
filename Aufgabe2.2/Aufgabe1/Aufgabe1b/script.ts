@@ -1,5 +1,4 @@
-function isEven(): boolean {
-    let num: number = 50;    
+function isEven(num: number): boolean {    
     while (num >= 0) {
         if (num == 0) {
             return true; //Zahl ist gerade
@@ -13,4 +12,12 @@ function isEven(): boolean {
     return false;
 }
 
-console.log(isEven());
+let num1: number = 50;
+let num2: number = 75;
+console.log(num1 + " " + isEven(num1));
+console.log(num2 + " " + isEven(num2));
+
+//Mit -1 startet die while Schleife nicht, da die Zahl >= 0 sein sollte. 
+//In dem Fall wird dann der angegebenen Rückgabewert (in meinem Fall false).
+//Die Funktion könnte sich jedoch so umbauen lassen, 
+//dass eine negative Zahl erkannt wird if(num < 0) und diese in dem Fall dann mit -1 multipliziert wird.
