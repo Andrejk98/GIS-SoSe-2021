@@ -2,7 +2,7 @@ let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myFi
 let context: CanvasRenderingContext2D = canvas.getContext("2d");
 
 context.lineWidth = 5;
-
+//A)
 //Himmel
 context.fillStyle = "#8ED6FF";
 context.fillRect(0, 0, 400, 250);
@@ -44,7 +44,7 @@ context.fillStyle = "Black";
 context.fill();
 context.stroke();
 
-//b)
+//B)
 interface OwnRect {
     posX: number;
     posY: number;
@@ -52,18 +52,18 @@ interface OwnRect {
     sizeY: number;
 }
 
-//c)
+//C)
 function createRect(): OwnRect {
     let rect1: OwnRect = { posX: Math.random() * 400, posY: Math.random() * 400, sizeX: Math.random() * 100, sizeY: Math.random() * 100 };
     return rect1;
 }
-//d)
+//D)
 function drawRect(rect1: OwnRect): void {
     context.beginPath();
     context.fillRect(rect1.posX += 10, rect1.posY, rect1.sizeX, rect1.sizeY);
     context.fill();
 }
-//e)
+//E)
 let rectangles: OwnRect[] = [];
 rectangles.push(createRect());
 rectangles.push(createRect());
