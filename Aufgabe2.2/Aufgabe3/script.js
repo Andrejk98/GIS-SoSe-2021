@@ -1,5 +1,5 @@
 "use strict";
-let canvas = document.getElementById("myFirstCanvas");
+let canvas = document.getElementById("myCanvas");
 let context = canvas.getContext("2d");
 context.lineWidth = 5;
 //A)
@@ -11,8 +11,8 @@ context.fillStyle = "Green";
 context.fillRect(0, 250, 400, 220);
 //Sonne
 context.beginPath();
-context.fillStyle = "Yellow";
-context.arc(50, 50, 70, 0, 360, false);
+context.fillStyle = "#fdd835";
+context.arc(40, 40, 70, 0, 360, false);
 context.fill();
 //Wolke
 context.beginPath();
@@ -25,19 +25,19 @@ context.arc(375, 80, 40, 0, 360, false);
 context.fill();
 //Baum
 context.beginPath();
-context.fillStyle = "Green";
+context.fillStyle = "Lime";
 context.arc(320, 190, 25, 0, 360, false);
 context.fill();
 context.beginPath();
 context.fillStyle = "Brown";
-context.fillRect(315, 210, 10, 40);
+context.fillRect(315, 210, 10, 50);
 context.fill();
 //Haus
 context.beginPath();
 context.moveTo(30, 250);
-context.lineTo(80, 250);
-context.lineTo(80, 200);
-context.lineTo(55, 180);
+context.lineTo(70, 250);
+context.lineTo(70, 200);
+context.lineTo(50, 180);
 context.lineTo(30, 200);
 context.closePath();
 context.fillStyle = "Black";
