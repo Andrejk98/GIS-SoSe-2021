@@ -48,9 +48,9 @@
   .konfiguratorContent span {
     float: right;
   }
-  .konfiguratorContent h4 {
+  /*.konfiguratorContent h4 {
     display: inline;
-  }
+  }*/
   .konfiguratorContent div {
     margin-top: 20px;
   }
