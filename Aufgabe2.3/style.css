@@ -19,7 +19,7 @@
     border-style: dotted;
   }
   #kapitelaufgabe {
-    position: absolute;
+    position: fixed;
     transform: translateY(100px);
     width: 1000px;
   }
