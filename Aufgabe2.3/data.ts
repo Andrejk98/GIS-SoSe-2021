@@ -1,5 +1,5 @@
 namespace Aufgabe2_3_Kapitelaufgabe {
-    let caseHeadlines: string [] = ["Graphicscard:", "RAM:", "Powersupply:", "Prozessor:"];
+    let caseHeadlines: string [] = ["Graphicscard:", "RAm:", "Powersupply:", "Prozessor:"];
 
     //Variable Computer anlegen
     let computer1: Case = new Case("RTX2080", "8GB", "500W", "Ryzen7", "Mini Tower");
