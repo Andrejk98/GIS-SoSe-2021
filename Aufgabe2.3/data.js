@@ -1,7 +1,7 @@
 "use strict";
 var Aufgabe2_3_Kapitelaufgabe;
 (function (Aufgabe2_3_Kapitelaufgabe) {
-    let caseHeadlines = ["Graphicscard:", "RAN:", "Powersupply:", "Prozessor:"];
+    let caseHeadlines = ["Graphicscard:", "RAM:", "Powersupply:", "Prozessor:"];
     //Variable Computer anlegen
     let computer1 = new Aufgabe2_3_Kapitelaufgabe.Case("RTX2080", "8GB", "500W", "Ryzen7", "Mini Tower");
     let computer2 = new Aufgabe2_3_Kapitelaufgabe.Case("RTX3080", "16GB", "650W", "I9", "Mid Tower");
