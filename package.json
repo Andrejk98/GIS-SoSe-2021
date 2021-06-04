@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "@types/node": "^15.12.0"
-  }
+  },
+  "name": "gis-sose-2021",
+  "description": "Guten Tag",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe3.1/Server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrejk98/GIS-SoSe-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrejk98/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/Andrejk98/GIS-SoSe-2021#readme"
 }

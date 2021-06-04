@@ -4,7 +4,7 @@ export namespace P_3_1Server {
     console.log("Starting server");
     let port: number = Number(process.env.PORT);
     if (!port)
-        port = 8100;
+        port = 81;
 
     let server: Http.Server = Http.createServer();
     server.addListener("request", handleRequest);
