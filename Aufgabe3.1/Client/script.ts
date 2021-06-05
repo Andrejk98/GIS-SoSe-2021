@@ -3,7 +3,7 @@ namespace Aufgabe3_1 {
     function sendData (): void {
         //Daten asus Formular auslesen
         let formData: FormData = new FormData(document.forms[0]);
-        let url: RequestInfo = "https://gis-sose-2021-Andrejk98.herokuapp.com/";
+        let url: RequestInfo = "https://testgissose2021.herokuapp.com/";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //query an die Url anhängen
