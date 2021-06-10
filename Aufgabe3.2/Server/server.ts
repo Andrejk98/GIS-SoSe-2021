@@ -6,7 +6,6 @@ export namespace P_3_2Server {
         prename: string;
         lastname: string;
         age: string;
-        postcode: string;
     }
 
 
@@ -29,7 +28,7 @@ export namespace P_3_2Server {
             //URL parsen
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);           
             //Über den Pfad auslesen, was nun getan werden soll
-            let clientInformation: ClientInformation = { prename: "huhu", lastname: "", age: "", postcode: ""};
+            let clientInformation: ClientInformation = { prename: "huhu", lastname: "", age: ""};
             //JSON string erstellen
             let jsonString: string = JSON.stringify(url.query);
 

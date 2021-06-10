@@ -21,7 +21,7 @@ var P_3_2Server;
             //URL parsen
             let url = Url.parse(_request.url, true);
             //Über den Pfad auslesen, was nun getan werden soll
-            let clientInformation = { prename: "huhu", lastname: "", age: "", postcode: "" };
+            let clientInformation = { prename: "huhu", lastname: "", age: "" };
             //JSON string erstellen
             let jsonString = JSON.stringify(url.query);
             //HTML
