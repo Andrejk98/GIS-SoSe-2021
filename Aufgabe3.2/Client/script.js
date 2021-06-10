@@ -3,7 +3,7 @@ var Aufgabe3_1;
 (function (Aufgabe3_1) {
     //Synchrone Funktion SendData, welche die URL erweitert
     function sendDataHtml() {
-        let url = "https://testgissose2021.herokuapp.com/";
+        let url = "https://testgissose2021.herokuapp.com/html";
         //Daten asus Formular auslesen
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
@@ -22,7 +22,7 @@ var Aufgabe3_1;
         answerOutput.innerHTML = responseString;
     }
     function sendDataJson() {
-        let url = "https://testgissose2021.herokuapp.com/";
+        let url = "https://testgissose2021.herokuapp.com/json";
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);

@@ -1,7 +1,7 @@
 namespace Aufgabe3_1 {
     //Synchrone Funktion SendData, welche die URL erweitert
     function sendDataHtml (): void {
-        let url: RequestInfo = "https://testgissose2021.herokuapp.com/";
+        let url: RequestInfo = "https://testgissose2021.herokuapp.com/html";
         //Daten asus Formular auslesen
         let formData: FormData = new FormData(document.forms[0]);
         
@@ -23,7 +23,7 @@ namespace Aufgabe3_1 {
     }
 
     function sendDataJson (): void {
-        let url: string = "https://testgissose2021.herokuapp.com/";
+        let url: string = "https://testgissose2021.herokuapp.com/json";
         let formData: FormData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
