@@ -8,7 +8,7 @@ var P_3_4Server;
 (function (P_3_4Server) {
     let port = Number(process.env.PORT);
     if (!port)
-        port = 81;
+        port = 8100;
     console.log("Starting server on port:" + port);
     //Server erstellen
     let server = Http.createServer();

@@ -12,7 +12,7 @@ export namespace P_3_4Server {
 
     let port: number = Number(process.env.PORT);
     if (!port)
-        port = 81;
+        port = 8100;
     console.log("Starting server on port:" + port);
     //Server erstellen
     let server: Http.Server = Http.createServer();
