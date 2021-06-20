@@ -1,8 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
-import * as Mongo from "mongodb";
 
-export namespace P_3_4Server {
+export namespace P_3_2Server {
     interface ClientInformation {
         prename: string;
         lastname: string;
@@ -19,7 +18,7 @@ export namespace P_3_4Server {
     server.listen(port);
     server.addListener("request", handleRequest);
     
-    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("Hearing");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -33,13 +32,6 @@ export namespace P_3_4Server {
             //JSON string erstellen
             let jsonString: string = JSON.stringify(url.query);
 
-            let mongoURL: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
-
-            let options: Mongo.MongoClientOptions = {useNewUrlParser:  true, useUnifiedTopology: true};
-            let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(mongoURL, options);
-            await mongoClient.connect();
-
-            let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
             //HTML
             if (url.pathname == "/html") {
                 //Ausgabe in Html Code
@@ -56,12 +48,6 @@ export namespace P_3_4Server {
             if (url.pathname == "/json") {
                 console.log(jsonString);
                 _response.write(jsonString);
-            }
-
-            if (url.pathname == "/reset") {
-                orders.drop();
-
-                _response.write("Database deleted");
             }
         } 
         _response.end();

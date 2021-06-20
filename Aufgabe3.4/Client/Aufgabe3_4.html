@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="main">
+    <form id="kontaktformular" name="Kontaktformular" action="Kontaktaufnehmen">
+        <div>
+            <div>
+                <label for="name">Vorname</label>
+                <input type="text" id="name" name="prename">
+            </div>
+            <div>
+                <label for="nachname">Nachname</label>
+                <input type="text" id="nachname" name="lastname">
+            </div>
+            <div>    
+                <label for="alter">Alter</label>
+                <input type="text" id="Alter" name="age">
+            </div>
+        </div>
+    </form>
+    <button id="sendDataHtml">Abschicken</button>
+    <button id="sendDataJson">Auslesen</button>
+    <button id="sendDataJson">Alles Löschen</button>
+
+    <div id="answer"></div>
+</body>
+</html>
