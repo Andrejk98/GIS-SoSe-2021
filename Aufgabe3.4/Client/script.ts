@@ -56,10 +56,39 @@ namespace Aufgabe3_4 {
         }
         serverResponse.innerHTML = "Deleted Database";
     }
+
+    async function read(_event: Event): Promise<void> {
+
+        const serverResponse: HTMLElement = document.getElementById("answer");
+
+        let url: string = "";
+
+        console.log("Server wird angefragt");
+
+        let formData: FormData = new FormData(document.forms[0]);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+
+        url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
+
+        const response: Response = await fetch(url);
+        const receivedObj: string = await response.text();
+
+        print(receivedObj);
+
+        function print(_url: string): void {
+            serverResponse.innerHTML = _url;
+        }
+
+        serverResponse.innerHTML = "Printed Database";
+        serverResponse.innerHTML = receivedObj;
+
+    }
     
 
     let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
     deleteData.addEventListener("click", deleteAll);
+    let readData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("sendDataHtml");
+    readData.addEventListener("click", read);
     //document.querySelector("#deleteAll").addEventListener("click", deleteAll);
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);

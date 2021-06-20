@@ -46,6 +46,19 @@ export namespace P_3_4Server {
             await mongoClient.connect();
 
             let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
+
+            if (url.pathname == "/readData") {
+                _response.setHeader("content-type", "text/html; charset=utf-8");
+                _response.setHeader("Access.Control-Allow-Origin", "*");
+
+                let dataSearch: Mongo.Cursor = orders.find();
+                let dataFiles: Formular[] = await dataSearch.toArray();
+
+                _response.write(JSON.stringify(dataFiles));
+
+            }
+
+            
             //HTML
             if (url.pathname == "/html") {
                 //Ausgabe in Html Code
@@ -73,5 +86,11 @@ export namespace P_3_4Server {
             }
         } 
         _response.end();
+
+        interface Formular {
+            name: String;
+            nachname: String;
+            alter: String;
+        }
     }
 }

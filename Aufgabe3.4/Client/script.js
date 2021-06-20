@@ -46,8 +46,26 @@ var Aufgabe3_4;
         }
         serverResponse.innerHTML = "Deleted Database";
     }
+    async function read(_event) {
+        const serverResponse = document.getElementById("answer");
+        let url = "";
+        console.log("Server wird angefragt");
+        let formData = new FormData(document.forms[0]);
+        let query = new URLSearchParams(formData);
+        url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
+        const response = await fetch(url);
+        const receivedObj = await response.text();
+        print(receivedObj);
+        function print(_url) {
+            serverResponse.innerHTML = _url;
+        }
+        serverResponse.innerHTML = "Printed Database";
+        serverResponse.innerHTML = receivedObj;
+    }
     let deleteData = document.getElementById("deleteData");
     deleteData.addEventListener("click", deleteAll);
+    let readData = document.getElementById("sendDataHtml");
+    readData.addEventListener("click", read);
     //document.querySelector("#deleteAll").addEventListener("click", deleteAll);
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
