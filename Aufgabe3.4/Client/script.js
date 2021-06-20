@@ -44,7 +44,7 @@ var Aufgabe3_4;
         function print(_url) {
             serverResponse.innerHTML = _url;
         }
-        serverResponse.innerHTML = "Deleted Database1";
+        serverResponse.innerHTML = "Deleted Database";
     }
     let deleteData = document.getElementById("deleteData");
     deleteData.addEventListener("click", deleteAll);

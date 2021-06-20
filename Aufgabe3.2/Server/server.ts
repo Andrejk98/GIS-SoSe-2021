@@ -62,6 +62,8 @@ export namespace P_3_4Server {
                 orders.drop();
 
                 _response.write("Database deleted");
+
+                console.log("trying to delete");
             }
         } 
         _response.end();

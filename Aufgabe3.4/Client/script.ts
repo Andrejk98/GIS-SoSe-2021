@@ -52,7 +52,7 @@ namespace Aufgabe3_4 {
         function print(_url: string): void {
             serverResponse.innerHTML = _url;
         }
-        serverResponse.innerHTML = "Deleted Database1";
+        serverResponse.innerHTML = "Deleted Database";
     }
     
 

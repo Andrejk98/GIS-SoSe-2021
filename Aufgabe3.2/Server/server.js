@@ -49,6 +49,7 @@ var P_3_4Server;
             if (url.pathname == "/reset") {
                 orders.drop();
                 _response.write("Database deleted");
+                console.log("trying to delete");
             }
         }
         _response.end();
