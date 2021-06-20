@@ -33,13 +33,13 @@ export namespace P_3_4Server {
             //JSON string erstellen
             let jsonString: string = JSON.stringify(url.query);
 
-            let mongoURL: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
+            let mongoURL: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
 
             let options: Mongo.MongoClientOptions = {useNewUrlParser:  true, useUnifiedTopology: true};
             let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(mongoURL, options);
             await mongoClient.connect();
 
-            let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
+            let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
             //HTML
             if (url.pathname == "/html") {
                 //Ausgabe in Html Code
