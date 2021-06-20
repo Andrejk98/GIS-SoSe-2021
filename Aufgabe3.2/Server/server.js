@@ -30,11 +30,11 @@ var P_3_4Server;
             let clientInformation = { prename: "huhu", lastname: "", age: "" };
             //JSON string erstellen
             let jsonString = JSON.stringify(url.query);
-            let mongoURL = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
+            let mongoURL = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
             let options = { useNewUrlParser: true, useUnifiedTopology: true };
             let mongoClient = new Mongo.MongoClient(mongoURL, options);
             await mongoClient.connect();
-            let orders = mongoClient.db("Test").collection("Students");
+            let orders = mongoClient.db("Aufgabe3_4").collection("Test");
             //HTML
             if (url.pathname == "/html") {
                 //Ausgabe in Html Code
