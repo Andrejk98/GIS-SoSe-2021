@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.P_3_2Server = void 0;
+exports.P_3_4Server = void 0;
 const Http = require("http");
 const Url = require("url");
-var P_3_2Server;
-(function (P_3_2Server) {
+const Mongo = require("mongodb");
+var P_3_4Server;
+(function (P_3_4Server) {
     let port = Number(process.env.PORT);
     if (!port)
         port = 81;
@@ -13,7 +14,7 @@ var P_3_2Server;
     let server = Http.createServer();
     server.listen(port);
     server.addListener("request", handleRequest);
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("Hearing");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -24,6 +25,11 @@ var P_3_2Server;
             let clientInformation = { prename: "huhu", lastname: "", age: "" };
             //JSON string erstellen
             let jsonString = JSON.stringify(url.query);
+            let mongoURL = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
+            let options = { useNewUrlParser: true, useUnifiedTopology: true };
+            let mongoClient = new Mongo.MongoClient(mongoURL, options);
+            await mongoClient.connect();
+            let orders = mongoClient.db("Test").collection("Students");
             //HTML
             if (url.pathname == "/html") {
                 //Ausgabe in Html Code
@@ -40,8 +46,12 @@ var P_3_2Server;
                 console.log(jsonString);
                 _response.write(jsonString);
             }
+            if (url.pathname == "/reset") {
+                orders.drop();
+                _response.write("Database deleted");
+            }
         }
         _response.end();
     }
-})(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
+})(P_3_4Server = exports.P_3_4Server || (exports.P_3_4Server = {}));
 //# sourceMappingURL=server.js.map
