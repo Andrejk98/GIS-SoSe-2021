@@ -38,7 +38,7 @@ var P_3_4Server;
         let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Test").collection("Eis");
+        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
         //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
         let order = JSON.parse(_jsonString);
         orders.insertOne(order);

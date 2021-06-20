@@ -44,7 +44,7 @@ export namespace P_3_4Server {
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Test").collection("Eis");
+        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
         //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
         let order: OrderInformation = JSON.parse(_jsonString);
         orders.insertOne(order);
