@@ -16,8 +16,13 @@ export namespace P_3_4Server {
     console.log("Starting server on port:" + port);
     //Server erstellen
     let server: Http.Server = Http.createServer();
-    server.listen(port);
     server.addListener("request", handleRequest);
+    server.addListener("listening", handleListen);
+    server.listen(port);
+
+    function handleListen(): void {
+        console.log("Listening");
+    }
     
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("Hearing");

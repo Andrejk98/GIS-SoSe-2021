@@ -12,8 +12,12 @@ var P_3_4Server;
     console.log("Starting server on port:" + port);
     //Server erstellen
     let server = Http.createServer();
-    server.listen(port);
     server.addListener("request", handleRequest);
+    server.addListener("listening", handleListen);
+    server.listen(port);
+    function handleListen() {
+        console.log("Listening");
+    }
     async function handleRequest(_request, _response) {
         console.log("Hearing");
         _response.setHeader("content-type", "text/html; charset=utf-8");
