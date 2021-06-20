@@ -35,11 +35,11 @@ var Aufgabe3_4;
         console.log(responseString);
     }
     async function deleteAll(_event) {
+        let serverResponse = document.getElementById("answer");
         let url = "https://testgissose2021.herokuapp.com/reset";
         let response = await fetch(url);
         let responseString = await response.text();
         console.log(responseString);
-        const serverResponse = document.getElementById("answer");
         print(responseString);
         function print(_url) {
             serverResponse.innerHTML = _url;

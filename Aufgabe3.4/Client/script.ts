@@ -38,6 +38,8 @@ namespace Aufgabe3_4 {
     }
 
     async function deleteAll(_event: Event): Promise<void> {
+        let serverResponse: HTMLElement = document.getElementById("answer");
+
         let url: string = "https://testgissose2021.herokuapp.com/reset";
 
         let response: Response = await fetch(url);
@@ -45,7 +47,7 @@ namespace Aufgabe3_4 {
         
         console.log(responseString); 
         
-        const serverResponse: HTMLElement = document.getElementById("answer");
+        
         
         print(responseString);
         

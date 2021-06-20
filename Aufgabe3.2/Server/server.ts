@@ -32,8 +32,8 @@ export namespace P_3_4Server {
 
         if (_request.url) {
             //URL parsen
-            let requestUrl: string = _request.url;
-            let url: Url.UrlWithParsedQuery = Url.parse(requestUrl, true);           
+            const requestUrl: string = _request.url;
+            const url: Url.UrlWithParsedQuery = Url.parse(requestUrl, true);           
             //Über den Pfad auslesen, was nun getan werden soll
             let clientInformation: ClientInformation = { prename: "huhu", lastname: "", age: ""};
             //JSON string erstellen

@@ -24,8 +24,8 @@ var P_3_4Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             //URL parsen
-            let requestUrl = _request.url;
-            let url = Url.parse(requestUrl, true);
+            const requestUrl = _request.url;
+            const url = Url.parse(requestUrl, true);
             //Über den Pfad auslesen, was nun getan werden soll
             let clientInformation = { prename: "huhu", lastname: "", age: "" };
             //JSON string erstellen
