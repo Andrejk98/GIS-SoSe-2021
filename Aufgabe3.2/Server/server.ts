@@ -11,7 +11,7 @@ export namespace P_3_4Server {
     }
     //let mongoUrl: string = "mongodb://localhost:27017";
     //URL für Datenbank
-    let mongoUrl: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
+    let mongoUrl: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -44,7 +44,7 @@ export namespace P_3_4Server {
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
+        let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
         //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
         let order: OrderInformation = JSON.parse(_jsonString);
         orders.insertOne(order);
@@ -56,7 +56,7 @@ export namespace P_3_4Server {
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
+        let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
         //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
         let cursor: Mongo.Cursor = orders.find();
         let result: OrderInformation[] = await cursor.toArray();
