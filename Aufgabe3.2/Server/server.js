@@ -50,7 +50,7 @@ var P_3_4Server;
         let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Test").collection("Eis");
+        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
         //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
         let cursor = orders.find();
         let result = await cursor.toArray();

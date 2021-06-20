@@ -56,7 +56,7 @@ export namespace P_3_4Server {
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Test").collection("Eis");
+        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
         //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
         let cursor: Mongo.Cursor = orders.find();
         let result: OrderInformation[] = await cursor.toArray();
