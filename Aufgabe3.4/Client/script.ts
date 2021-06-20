@@ -56,9 +56,9 @@ namespace Aufgabe3_4 {
     }
     
 
-    //let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
-    //deleteData.addEventListener("click", deleteAll);
-    document.querySelector("#deleteAll").addEventListener("click", deleteAll);
+    let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
+    deleteData.addEventListener("click", deleteAll);
+    //document.querySelector("#deleteAll").addEventListener("click", deleteAll);
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
 }

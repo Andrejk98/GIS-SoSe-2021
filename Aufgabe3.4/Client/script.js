@@ -46,9 +46,9 @@ var Aufgabe3_4;
         }
         serverResponse.innerHTML = "Deleted Database1";
     }
-    //let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
-    //deleteData.addEventListener("click", deleteAll);
-    document.querySelector("#deleteAll").addEventListener("click", deleteAll);
+    let deleteData = document.getElementById("deleteData");
+    deleteData.addEventListener("click", deleteAll);
+    //document.querySelector("#deleteAll").addEventListener("click", deleteAll);
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));
