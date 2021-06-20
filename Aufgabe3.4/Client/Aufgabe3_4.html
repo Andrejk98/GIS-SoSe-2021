@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Task3.4</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="main">
-    <form id="kontaktformular" name="Kontaktformular" action="Kontaktaufnehmen">
-        <div>
-            <div>
-                <label for="name">Vorname</label>
-                <input type="text" id="name" name="prename">
-            </div>
-            <div>
-                <label for="nachname">Nachname</label>
-                <input type="text" id="nachname" name="lastname">
-            </div>
-            <div>    
-                <label for="alter">Alter</label>
-                <input type="text" id="Alter" name="age">
-            </div>
-        </div>
+<body>
+    <form>
+        <h1>Bestellung</h1>
+        <p>Name</p>
+        <input type="text" name="name">
+        <h4>Eissorte</h4>
+        <input id = "strawberry" type="radio" name="iceSelection" value="Erdbeere">
+        <label for="strawberry">Erdbeere</label>
+        <input id="vanille" type="radio" name="iceSelection" value="Vanille">
+        <label for="vanille">Vanille</label>
+        <h4>Behälter</h4>
+        <label>Behälter:</label>
+        <select name="box">
+            <option value="waffel">Waffel</option>
+            <option value="becher">Becher</option>
+        </select>
     </form>
-    <button id="sendDataHtml">Abschicken</button>
-    <button id="sendDataJson">Auslesen</button>
-    <button id="deleteData">Alles Löschen</button>
+    <button id="sendData">Abschicken</button>
+    <button id="printData">Daten anzeigen</button>
 
-    <div id="answer"></div>
+    <p id="confirmation"></p>
+    <div class= "container" id="answer"></div>
+
 </body>
 </html>

@@ -1,18 +1,12 @@
-.main {
-    margin: auto;
-    font: 1.1em/150% 'Segoe UI', Sans-Serif; 
-    margin-top: 60px; 
-    width: 800px;
+  
+.container {
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
 }
 
-label{
-    display: block;
-    cursor: pointer;
-}
-
-textarea{
-    width: 300px;
-    border: 1px solid black;
-    margin-bottom: 1em;
-    height: 7em;
+.container div {
+    border-style:solid;
+    padding: 20px;
+    margin: 20px;
 }
