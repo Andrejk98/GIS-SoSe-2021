@@ -21,7 +21,7 @@ var P_3_4Server;
     function clearForm() {
         document.getElementsByTagName("input")[0].value = "";
         document.getElementsByTagName("input")[1].value = "";
-        document.getElementsByTagName("textarea")[0].value = "";
+        document.getElementsByTagName("input")[2].value = "";
     }
     async function read(_event) {
         const serverResponse = document.getElementById("abc");
