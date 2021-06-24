@@ -6,65 +6,58 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var P_3_4Server;
 (function (P_3_4Server) {
-    //let mongoUrl: string = "mongodb://localhost:27017";
-    //URL für Datenbank
-    let mongoUrl = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
+    console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
-        port = 8100;
-    console.log("Starting server on port:" + port);
-    //Server erstellen
+        port = 81;
     let server = Http.createServer();
-    server.listen(port);
     server.addListener("request", handleRequest);
-    function handleRequest(_request, _response) {
-        console.log("Heariing");
+    server.addListener("listening", handleListen);
+    server.listen(port);
+    function handleListen() {
+        console.log("Listening");
+    }
+    async function handleRequest(_request, _response) {
+        console.log("\n");
+        console.log("\n");
+        console.log("I hear voices!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        //URL parsen
-        let url = Url.parse(_request.url, true);
-        let jsonString = JSON.stringify(url.query);
-        //Die zwei Buttons der HTML-Seite unterscheiden
-        if (url.pathname == "/sendData") {
-            writeDataBase(jsonString, mongoUrl);
-        }
-        if (url.pathname == "/getData") {
-            getData(_response, mongoUrl);
-        }
-    }
-    //Daten aus dem Formular in die Datenbank schreiben
-    async function writeDataBase(_jsonString, _mongoUrl) {
-        let options = { useNewUrlParser: true, useUnifiedTopology: true };
-        let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
-        await mongoClient.connect();
-        //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
-        //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
-        let order = JSON.parse(_jsonString);
-        orders.insertOne(order);
-        console.log("Database connection", orders != undefined);
-    }
-    //Daten aus der Datenbank auslesen und dann an den Client schicken
-    async function getData(_response, _mongoUrl) {
-        let options = { useNewUrlParser: true, useUnifiedTopology: true };
-        let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
-        await mongoClient.connect();
-        //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
-        //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
-        let cursor = orders.find();
-        let result = await cursor.toArray();
-        //Ausgabe auf der HTML-Seite
-        //Überschrift
-        _response.write("<h3>" + "Serverantwort:" + "</h3>");
-        //Für die Länge des Arrays jeden Wert ausgeben
-        for (let i = 0; i < result.length; i++) {
-            _response.write("<div>" +
-                "<h4>" + "Eintrag" + i + "</h4>" +
-                "<p>" + result[i].name + "</p>" +
-                "<p>" + result[i].iceSelection + "</p>" +
-                "<p>" + result[i].box + "</p>" +
-                "</div>");
+        if (_request.url) {
+            const reqeustUrl = _request.url;
+            const urlSlash = Url.parse(reqeustUrl, true);
+            let mongoURL = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
+            let options = { useNewUrlParser: true, useUnifiedTopology: true };
+            let mongoClient = new Mongo.MongoClient(mongoURL, options);
+            await mongoClient.connect();
+            let orders = mongoClient.db("Aufgabe3_4").collection("Test");
+            if (urlSlash.pathname == "/readData") {
+                _response.setHeader("content-type", "text/html; charset=utf-8");
+                _response.setHeader("Access.Control-Allow-Origin", "*");
+                let dataSearch = orders.find();
+                let dataFiles = await dataSearch.toArray();
+                _response.write(JSON.stringify(dataFiles));
+            }
+            if (urlSlash.pathname == "/dataAdd") {
+                _response.write("<p>" + " Ihre Eingaben, vom Server zurückgesendet: " + "</p>");
+                for (let key in urlSlash.query) {
+                    _response.write("<p>" + key + ": " + urlSlash.query[key] + "</p>");
+                }
+                let jsonString = JSON.stringify(urlSlash.query);
+                _response.write(jsonString);
+                orders.insert(urlSlash.query);
+                orders.find();
+            }
+            if (urlSlash.pathname == "/resetDatabase") {
+                orders.drop();
+                _response.write("Database Cleared");
+            }
+            if (urlSlash.pathname == "/del") {
+                let url = Url.parse(_request.url, true);
+                let jsonString = JSON.stringify(urlSlash.query);
+                _response.write(jsonString);
+                await orders.deleteOne({ "Name": url.query.Name, "Passwort": url.query.Passwort });
+            }
         }
         _response.end();
     }

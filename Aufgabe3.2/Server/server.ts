@@ -3,75 +3,105 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace P_3_4Server {
-    //Interface um die Eingaben zu verarbeiten
-    interface OrderInformation {
-        name: string;
-        iceSelection: string;
-        box: string;
-    }
-    //let mongoUrl: string = "mongodb://localhost:27017";
-    //URL für Datenbank
-    let mongoUrl: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
-    let port: number = Number(process.env.PORT);
-    if (!port)
-        port = 8100;
-    console.log("Starting server on port:" + port);
-    //Server erstellen
-    let server: Http.Server = Http.createServer();
-    server.listen(port);
-    server.addListener("request", handleRequest);
-    
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("Heariing");
+    console.log("Starting server");
+    let port: number = Number(process.env.PORT);
+
+    if (!port)
+        port = 81;
+   
+    let server: Http.Server = Http.createServer();
+    server.addListener("request", handleRequest);
+    server.addListener("listening", handleListen);
+    server.listen(port);
+
+    function handleListen(): void {
+
+        console.log("Listening");
+
+    }
+
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+
+        console.log("\n");
+        console.log("\n");
+        console.log("I hear voices!");
+
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        //URL parsen
-        let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-        let jsonString: string = JSON.stringify(url.query);
-        //Die zwei Buttons der HTML-Seite unterscheiden
-        if (url.pathname == "/sendData") {
-            writeDataBase(jsonString, mongoUrl);
+
+        if (_request.url) {
+
+            const reqeustUrl: string = _request.url;
+            const urlSlash: Url.UrlWithParsedQuery = Url.parse(reqeustUrl, true);
+
+            let mongoURL: string = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
+
+            let options: Mongo.MongoClientOptions = {useNewUrlParser:  true, useUnifiedTopology: true};
+            let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(mongoURL, options);
+            await mongoClient.connect();
+
+            let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
+
+            if (urlSlash.pathname == "/readData") {
+
+                _response.setHeader("content-type", "text/html; charset=utf-8");
+                _response.setHeader("Access.Control-Allow-Origin", "*");
+
+                let dataSearch: Mongo.Cursor = orders.find();
+                let dataFiles: Formular[] = await dataSearch.toArray();
+            
+                _response.write(JSON.stringify(dataFiles));
+
+            }
+
+            if (urlSlash.pathname  == "/dataAdd") {
+
+                
+                _response.write("<p>" + " Ihre Eingaben, vom Server zurückgesendet: " + "</p>");
+
+                for (let key in urlSlash.query) {
+
+                    _response.write("<p>" + key + ": " + urlSlash.query[key] + "</p>");
+
+                }
+
+                let jsonString: string = JSON.stringify(urlSlash.query);
+                _response.write(jsonString);
+
+                orders.insert(urlSlash.query);
+                orders.find();
+
+            }
+            
+            if (urlSlash.pathname  == "/resetDatabase") {
+
+                orders.drop();
+
+                _response.write("Database Cleared");
+
+            }
+
+            if  (urlSlash.pathname == "/del") {
+
+                let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+                let jsonString: string = JSON.stringify(urlSlash.query);
+                _response.write(jsonString);
+
+                await orders.deleteOne({"Name": url.query.Name, "Passwort": url.query.Passwort}); 
+            }
+
         }
-        if (url.pathname == "/getData") {
-            getData(_response, mongoUrl);
-        }
+
+        _response.end();
+
+        interface Formular {
+
+            name: string;
+            passwort: string;
+            alter:  string;
+
+        }   
     }
 
-    //Daten aus dem Formular in die Datenbank schreiben
-    async function writeDataBase(_jsonString: string, _mongoUrl: string): Promise <void> {
-        let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
-        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
-        await mongoClient.connect();
-        //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
-        //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
-        let order: OrderInformation = JSON.parse(_jsonString);
-        orders.insertOne(order);
-        console.log("Database connection", orders != undefined);
-    }
-    //Daten aus der Datenbank auslesen und dann an den Client schicken
-    async function getData(_response: Http.ServerResponse, _mongoUrl: string): Promise <void> {
-        let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
-        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, options);
-        await mongoClient.connect();
-        //Datenbank und Collection auswählen
-        let orders: Mongo.Collection = mongoClient.db("Aufgabe3_4").collection("Test");
-        //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
-        let cursor: Mongo.Cursor = orders.find();
-        let result: OrderInformation[] = await cursor.toArray();
-        //Ausgabe auf der HTML-Seite
-        //Überschrift
-        _response.write("<h3>" + "Serverantwort:" + "</h3>");
-        //Für die Länge des Arrays jeden Wert ausgeben
-        for (let i: number = 0; i < result.length; i++) {
-            _response.write("<div>" + 
-            "<h4>" + "Eintrag" + i + "</h4>" +
-            "<p>" + result[i].name + "</p>" +
-            "<p>" + result[i].iceSelection + "</p>" +
-            "<p>" + result[i].box + "</p>" +
-            "</div>");
-        }
-        _response.end();
-    }
 }
