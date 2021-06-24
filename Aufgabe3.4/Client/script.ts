@@ -122,9 +122,9 @@ namespace P_3_4Server {
 
     let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
     deleteData.addEventListener("click", resetDatabase);
-
+/*
     let deleteOne: HTMLButtonElement = <HTMLButtonElement>document.getElementById("del");
     deleteOne.addEventListener("click", deleteFormularData);
-
+*/
 
 }

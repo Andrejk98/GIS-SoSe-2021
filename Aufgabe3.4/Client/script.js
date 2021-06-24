@@ -74,7 +74,9 @@ var P_3_4Server;
     readData.addEventListener("click", read);
     let deleteData = document.getElementById("deleteData");
     deleteData.addEventListener("click", resetDatabase);
-    let deleteOne = document.getElementById("del");
-    deleteOne.addEventListener("click", deleteFormularData);
+    /*
+        let deleteOne: HTMLButtonElement = <HTMLButtonElement>document.getElementById("del");
+        deleteOne.addEventListener("click", deleteFormularData);
+    */
 })(P_3_4Server || (P_3_4Server = {}));
 //# sourceMappingURL=script.js.map
