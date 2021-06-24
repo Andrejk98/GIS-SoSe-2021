@@ -8,7 +8,7 @@ var P_3_4Server;
 (function (P_3_4Server) {
     //let mongoUrl: string = "mongodb://localhost:27017";
     //URL für Datenbank
-    let mongoUrl = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Test?retryWrites=true&w=majority";
+    let mongoUrl = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -38,7 +38,7 @@ var P_3_4Server;
         let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Test").collection("Students");
+        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
         //Hier die Daten aus der URL parsen und über das Interface in die Variable legen
         let order = JSON.parse(_jsonString);
         orders.insertOne(order);
@@ -50,7 +50,7 @@ var P_3_4Server;
         let mongoClient = new Mongo.MongoClient(_mongoUrl, options);
         await mongoClient.connect();
         //Datenbank und Collection auswählen
-        let orders = mongoClient.db("Test").collection("Students");
+        let orders = mongoClient.db("Aufgabe3_4").collection("Test");
         //cursor auf die Datenbank legen und als Rückgabe ein OrderInformation(Interface!) Array erhalten
         let cursor = orders.find();
         let result = await cursor.toArray();
