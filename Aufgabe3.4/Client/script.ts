@@ -9,6 +9,7 @@ namespace P_3_4Server {
         console.log("Sending HTML to Server");
 
         let formData: FormData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
@@ -46,6 +47,7 @@ namespace P_3_4Server {
         console.log("Server wird angefragt");
 
         let formData: FormData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
@@ -92,6 +94,7 @@ namespace P_3_4Server {
         let url: string = "";
 
         let formData: FormData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         url = "https://testgissose2021.herokuapp.com/del"  + "?" + query.toString();
