@@ -52,12 +52,16 @@ var P_3_4Server;
                 orders.drop();
                 _response.write("Database Cleared");
             }
-            if (urlSlash.pathname == "/del") {
-                let url = Url.parse(_request.url, true);
-                let jsonString = JSON.stringify(urlSlash.query);
-                _response.write(jsonString);
-                await orders.deleteOne({ "Name": url.query.Name, "Passwort": url.query.Passwort });
-            }
+            /*
+                        if  (urlSlash.pathname == "/del") {
+            
+                            let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+                            let jsonString: string = JSON.stringify(urlSlash.query);
+                            _response.write(jsonString);
+            
+                            await orders.deleteOne({"Name": url.query.Name, "Nachname": url.query.Passwort});
+                        }
+            */
         }
         _response.end();
     }
