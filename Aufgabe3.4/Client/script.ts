@@ -87,33 +87,7 @@ namespace P_3_4Server {
 
     }
 
-/*
-    async function deleteFormularData(): Promise<void> {
-        const serverResponse: HTMLElement = document.getElementById("abc");
 
-        let url: string = "";
-
-        let formData: FormData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-
-        url = "https://testgissose2021.herokuapp.com/del"  + "?" + query.toString();
-
-        const response: Response = await fetch(url);
-        const receivedObj: string = await response.text();
-
-        print(receivedObj);
-
-        function print(_url: string): void {
-            serverResponse.innerHTML = _url;
-        }
-        
-        serverResponse.innerHTML = "Deleted: " + receivedObj;
-
-        clearForm();
-
-    }
-*/
     let submit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("login");
     submit.addEventListener("click", sendForm);
     
@@ -122,9 +96,6 @@ namespace P_3_4Server {
 
     let deleteData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("deleteData");
     deleteData.addEventListener("click", resetDatabase);
-/*
-    let deleteOne: HTMLButtonElement = <HTMLButtonElement>document.getElementById("del");
-    deleteOne.addEventListener("click", deleteFormularData);
-*/
+
 
 }
