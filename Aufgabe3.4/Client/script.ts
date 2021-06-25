@@ -20,7 +20,7 @@ namespace P_3_4Server {
         print(respString);
 
         function print(_url: string): void {
-            serverResponse.innerHTML = _url;
+            serverResponse.innerHTML = respString;
         }
 
         console.log("Text Printet On Website");

@@ -15,7 +15,7 @@ var P_3_4Server;
         console.log(response);
         print(respString);
         function print(_url) {
-            serverResponse.innerHTML = _url;
+            serverResponse.innerHTML = respString;
         }
         console.log("Text Printet On Website");
         clearForm();
