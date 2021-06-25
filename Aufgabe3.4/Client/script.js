@@ -9,6 +9,7 @@ var P_3_4Server;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
+        console.log(url);
         const response = await fetch(url);
         const respString = await response.text();
         print(respString);

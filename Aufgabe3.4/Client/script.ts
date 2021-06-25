@@ -13,7 +13,7 @@ namespace P_3_4Server {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
-
+        console.log(url);
         const response: Response = await fetch(url);
         const respString: string = await response.text();
 
