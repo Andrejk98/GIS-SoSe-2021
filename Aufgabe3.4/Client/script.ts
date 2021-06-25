@@ -16,7 +16,7 @@ namespace P_3_4Server {
         console.log(url);
         const response: Response = await fetch(url);
         const respString: string = await response.text();
-
+        console.log(response);
         print(respString);
 
         function print(_url: string): void {

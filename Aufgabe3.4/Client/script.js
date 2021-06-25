@@ -12,6 +12,7 @@ var P_3_4Server;
         console.log(url);
         const response = await fetch(url);
         const respString = await response.text();
+        console.log(response);
         print(respString);
         function print(_url) {
             serverResponse.innerHTML = _url;

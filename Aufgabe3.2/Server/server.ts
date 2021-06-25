@@ -45,9 +45,6 @@ export namespace P_3_4Server {
 
             if (urlSlash.pathname == "/readData") {
 
-                _response.setHeader("content-type", "text/html; charset=utf-8");
-                _response.setHeader("Access.Control-Allow-Origin", "*");
-
                 let dataSearch: Mongo.Cursor = orders.find();
                 let dataFiles: Formular[] = await dataSearch.toArray();
             
@@ -88,9 +85,11 @@ export namespace P_3_4Server {
 
         interface Formular {
 
+            _id: string;
             name: string;
             passwort: string;
             alter:  string;
+
 
         }   
     }
