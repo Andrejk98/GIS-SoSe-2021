@@ -87,7 +87,7 @@ namespace P_3_4Server {
 
     }
 
-
+/*
     async function deleteFormularData(): Promise<void> {
         const serverResponse: HTMLElement = document.getElementById("abc");
 
@@ -113,7 +113,7 @@ namespace P_3_4Server {
         clearForm();
 
     }
-
+*/
     let submit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("login");
     submit.addEventListener("click", sendForm);
     
