@@ -8,7 +8,8 @@ var P_3_4Server;
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
-        url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
+        // url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
+        url = "http://localhost:8100/dataAdd" + "?" + query.toString();
         console.log(url);
         const response = await fetch(url);
         const respString = await response.text();
@@ -32,7 +33,8 @@ var P_3_4Server;
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
-        url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
+        //url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
+        url = "http://localhost:8100/readData" + "?" + query.toString();
         const response = await fetch(url);
         const receivedObj = await response.text();
         print(receivedObj);

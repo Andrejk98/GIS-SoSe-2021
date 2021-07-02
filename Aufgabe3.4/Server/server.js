@@ -1,47 +1,57 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.P_3_2Server = void 0;
+exports.P_3_4Server = void 0;
 const Http = require("http");
 const Url = require("url");
-var P_3_2Server;
-(function (P_3_2Server) {
+const Mongo = require("mongodb");
+var P_3_4Server;
+(function (P_3_4Server) {
+    console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
-        port = 81;
-    console.log("Starting server on port:" + port);
-    //Server erstellen
+        port = 8100;
     let server = Http.createServer();
-    server.listen(port);
     server.addListener("request", handleRequest);
-    function handleRequest(_request, _response) {
-        console.log("Hearing");
+    server.addListener("listening", handleListen);
+    server.listen(port);
+    function handleListen() {
+        console.log("Listening");
+    }
+    async function handleRequest(_request, _response) {
+        console.log("\n");
+        console.log("\n");
+        console.log("I hear voices!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
-            //URL parsen
-            let url = Url.parse(_request.url, true);
-            //Über den Pfad auslesen, was nun getan werden soll
-            let clientInformation = { prename: "huhu", lastname: "", age: "" };
-            //JSON string erstellen
-            let jsonString = JSON.stringify(url.query);
-            //HTML
-            if (url.pathname == "/html") {
-                //Ausgabe in Html Code
-                //JSON String in interface legen
-                clientInformation = JSON.parse(jsonString);
-                //Überschrift
-                _response.write("<h3>" + "Serverantwort:" + "</h3>");
-                _response.write("<p>" + clientInformation.prename + "</p>");
-                _response.write("<p>" + clientInformation.lastname + "</p>");
-                _response.write("<p>" + clientInformation.age + "</p>");
+            const reqeustUrl = _request.url;
+            const urlSlash = Url.parse(reqeustUrl, true);
+            let mongoURL = "mongodb+srv://andrejk98:Maestro98@gissose.ny3jr.mongodb.net/Aufgabe3_4?retryWrites=true&w=majority";
+            let options = { useNewUrlParser: true, useUnifiedTopology: true };
+            let mongoClient = new Mongo.MongoClient(mongoURL, options);
+            await mongoClient.connect();
+            let orders = mongoClient.db("Aufgabe3_4").collection("Test");
+            if (urlSlash.pathname == "/readData") {
+                let dataSearch = orders.find();
+                let dataFiles = await dataSearch.toArray();
+                _response.write(JSON.stringify(dataFiles));
             }
-            //JSON
-            if (url.pathname == "/json") {
-                console.log(jsonString);
+            if (urlSlash.pathname == "/dataAdd") {
+                _response.write("<p>" + " Ihre Eingaben, vom Server zurückgesendet: " + "</p>");
+                for (let key in urlSlash.query) {
+                    _response.write("<p>" + key + ": " + urlSlash.query[key] + "</p>");
+                }
+                let jsonString = JSON.stringify(urlSlash.query);
                 _response.write(jsonString);
+                orders.insert(urlSlash.query);
+                orders.find();
+            }
+            if (urlSlash.pathname == "/resetDatabase") {
+                orders.drop();
+                _response.write("Database Cleared");
             }
         }
         _response.end();
     }
-})(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
+})(P_3_4Server = exports.P_3_4Server || (exports.P_3_4Server = {}));
 //# sourceMappingURL=server.js.map

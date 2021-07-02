@@ -8,7 +8,7 @@ export namespace P_3_4Server {
     let port: number = Number(process.env.PORT);
 
     if (!port)
-        port = 81;
+        port = 8100;
    
     let server: Http.Server = Http.createServer();
     server.addListener("request", handleRequest);

@@ -12,7 +12,8 @@ namespace P_3_4Server {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
+        // url = "https://testgissose2021.herokuapp.com/dataAdd" + "?" + query.toString();
+        url = "http://localhost:8100/dataAdd" + "?" + query.toString();
         console.log(url);
         const response: Response = await fetch(url);
         const respString: string = await response.text();
@@ -50,8 +51,8 @@ namespace P_3_4Server {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
-        url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
-
+        //url = "https://testgissose2021.herokuapp.com/readData" + "?" + query.toString();
+        url = "http://localhost:8100/readData" + "?" + query.toString();
         const response: Response = await fetch(url);
         const receivedObj: string = await response.text();
 
