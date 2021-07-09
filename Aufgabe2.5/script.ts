@@ -18,7 +18,7 @@ namespace Aufgabe2 {
         console.log(antwort);
     }
 
-    communicate("https://andrejk98.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");
+    communicate("https://andrejk98/GIS-SoSe-2021/Aufgabe2.5/data.json");
 
     //create img elemente
     function createImgElement(url: string, part?: string): HTMLImageElement {
